@@ -1,0 +1,17 @@
+spec:
+  template:
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: node-type
+                    operator: In
+                    values:
+                      - day1-node
+      tolerations:
+        - key: "workload"
+          operator: "Equal"
+          value: "day1"
+          effect: "NoSchedule"

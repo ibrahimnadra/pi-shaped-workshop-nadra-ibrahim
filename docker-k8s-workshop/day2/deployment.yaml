@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-day1-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: day1-app
+  template:
+    metadata:
+      labels:
+        app: day1-app
+    spec:
+      containers:
+      - name: day1-container
+        image: nadra187/docker-testapp:latest
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

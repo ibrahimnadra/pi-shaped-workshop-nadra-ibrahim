@@ -31,22 +31,22 @@ Teams use **node affinity** to:
 
 Since Minikube runs on a single node (`minikube`), we labeled and tainted it to simulate a production-like scheduling environment:
 
-![alt text](day2/screenshots/image.png)
+![alt text](screenshots/image.png)
 
 #### Verify the node label and taint
-![alt text](day2/screenshots/image-4.png)
+![alt text](screenshots/image-4.png)
 
 ---
 
 ### Step 2: Applied Basic Deployment
 
-Our deployment file (deployment.yaml) includes the container day2/screenshots/image and resource limits and requests. But does NOT include nodeAffinity and tolerations. Hence, the pods will be created, but won't be running.
+Our deployment file (deployment.yaml) includes the container screenshots/image and resource limits and requests. But does NOT include nodeAffinity and tolerations. Hence, the pods will be created, but won't be running.
 
-![alt text](day2/screenshots/image-1.png)
+![alt text](screenshots/image-1.png)
 
 #### Failed Deployment
 
-![alt text](day2/screenshots/image-5.png)
+![alt text](screenshots/image-5.png)
 
 ---
 
@@ -54,15 +54,15 @@ Our deployment file (deployment.yaml) includes the container day2/screenshots/im
 
 To fix the scheduling issue, i have patched the deployment using the node-affinity configuration file.
 
-![alt text](day2/screenshots/image-2.png)
+![alt text](screenshots/image-2.png)
 
 After some seconds, the older pods are terminated and new pods were created and  started running. 
 
-![alt text](day2/screenshots/image-3.png)
+![alt text](screenshots/image-3.png)
 
 ####  Successful deployment
 
-![alt text](day2/screenshots/image-6.png)
+![alt text](screenshots/image-6.png)
 
 
 

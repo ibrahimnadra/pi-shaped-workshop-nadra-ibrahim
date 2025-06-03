@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: day1-container
-        image: nadra187/docker-testapp:latest
+        image: nadra187/guess-game-test:1.0
         resources:
           requests:
             memory: "64Mi"

@@ -149,7 +149,9 @@ resources:
 ---    
 ### Check CPU usage reported by metrics-server
 Given i have set the replicas to 1 in the deployment file, but when i have sent too many requests, i can see the pods scaling up automatically as per the need.
+
 ![alt text](screenshots/image-5.png)
+
 ![alt text](screenshots/image-7.png)
 
 ---    
@@ -158,7 +160,7 @@ Given i have set the replicas to 1 in the deployment file, but when i have sent 
 
 ---    
 ### Minikube dashboard: metric server
-![alt text](<image-10.png>)
+![alt text](screenshots/image-10.png)
 
 ![alt text](screenshots/image-9.png)
 

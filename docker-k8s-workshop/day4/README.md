@@ -1,4 +1,4 @@
-# Guess Game - Helm Deployment
+# # Pi-shaped workshop: Day 4 Assignment
 
 This project demonstrates packaging a simple Python Flask-based number guessing game using **Helm** for Kubernetes deployment. It shows how to parameterize configuration for flexible and reusable deployments.
 

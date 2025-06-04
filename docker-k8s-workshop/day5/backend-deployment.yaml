@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-flask-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-flask-app
+  template:
+    metadata:
+      labels:
+        app: my-flask-app
+    spec:
+      containers:
+      - name: my-container
+        image: nadra187/my-app:latest
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 15    # Wait 15 sec after container starts before first check
+          periodSeconds: 20          # Check every 20 seconds
+          timeoutSeconds: 5          # Timeout if no response within 5 sec
+          failureThreshold: 3        # After 3 failures, restart the container
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 5     # Wait 5 sec after container starts before first check
+          periodSeconds: 10          # Check every 10 seconds
+          timeoutSeconds: 3          # Timeout if no response within 3 sec
+          failureThreshold: 3        # After 3 failures, mark pod as NotReady (stop sending traffic)
+
+
+
